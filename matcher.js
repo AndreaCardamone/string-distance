@@ -29,7 +29,7 @@ function normalize(string) {
  *   {value: `Chaim Bogan<Gregoria_McKenzie@yahoo.com>`}
  * ]
  *
- * m = matchs({
+ * let m = matchs({
  *   sources, targets,
  *   log: true,
  *   source_getter: d => d.value,
@@ -43,11 +43,11 @@ function normalize(string) {
  * @param {Object} options - The options of matching
  * @param {any[]|Map<Any>|Set<Any>|{values: ()=>Iterable<any>}} options.sources - The source Array, Map, Set or class with values() function in prototype
  * @param {any[]|Map<Any>|Set<Any>|{values: ()=>Iterable<any>}} options.targets - The target Array, Map, Set or class with values() function in prototype
- * @param {number=0.5} options.threshold - The threshold of score for filtering the matches
- * @param {boolean=true} options.debug - The option for enabling debug printing
- * @param {()=>string=obj => obj.toSring()} options.source_getter - The function applied to all sources fo getting the string source value (default: )
- * @param {()=>string=obj => obj.toSring()} options.target_getter - The function applied to all targets fo getting the string target value (default: target => target)
- * @param {(source, target, score)=>any= ()=>undefined} options.match_callback - a callback callad each match founded (default: ({source, target, score}) => undefined)
+ * @param {number} [options.threshold=0.5] - The threshold of score for filtering the matches
+ * @param {boolean} [options.debug=false] - The option for enabling debug printing
+ * @param {string} [options.source_getter] - The function applied to all sources fo getting the string source value (default: )
+ * @param {()=>string} [options.target_getter] - The function applied to all targets fo getting the string target value (default: target => target)
+ * @param {(source, target, score)=>any} [options.match_callback] - a callback callad each match founded (default: ({source, target, score}) => undefined)
  * @returns {[key: string]: object} The match results
  */
 function matchs({
