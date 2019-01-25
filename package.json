@@ -1,0 +1,22 @@
+{
+  "name": "string-similarity-match",
+  "version": "0.0.1",
+  "license": "MIT",
+  "author": "Andrea Cardamone <cardamone@artemat.it>",
+  "homepage": "https://github.com/AndreaCardamone/string-similarity-match#readme",
+  "bugs": {
+    "url": "https://github.com/AndreaCardamone/string-similarity-match/issues"
+  },
+  "description": "String Similarity matcher",
+  "keywords": [
+    "string-similarity"
+  ],
+  "main": "matcher.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AndreaCardamone/string-similarity-match.git"
+  }
+}
