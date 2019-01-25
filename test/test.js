@@ -1,5 +1,5 @@
 const { readFileSync } = require('fs')
-const { match, matchs } = require('string-similarity-match')
+const { matchs } = require('string-similarity-match')
 
 
 function test1() {
@@ -8,7 +8,7 @@ function test1() {
   
   let m = matchs({sources, targets})
   
-  console.log(`the match of "${source}" from "[${targets.join(', ')}] is ${m}`);
+  console.log(`the match of "[${sources.join(',')}]" from "[${targets.join(', ')}] is ${m}`);
 }
 
 
@@ -19,16 +19,17 @@ function test2() {
     {value: `Chaim Bogan<Gregoria_McKenzie@yahoo.com>`}
   ]
 
-  m = matchs({
+  let m = matchs({
     sources, targets,
-    log: true,
+    debug: true,
     source_getter: d => d.value,
     target_getter: d => `${d.firstname} ${d.lastname} ${d.email}`,
     threshold: 0.7,
     match_callback: ({ source, target, score }) => source.score = score,
   })
 
-  console.log(sources);
+  console.log(m);
+  console.log(sources)
 
 }
 
